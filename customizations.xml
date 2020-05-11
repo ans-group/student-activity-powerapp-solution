@@ -12107,69 +12107,6 @@
         </option>
       </options>
     </optionset>
-    <optionset Name="ans_whattypeofissueareyouexperiencing" localizedName="Task Issue Type (Delete)">
-      <OptionSetType>picklist</OptionSetType>
-      <IsGlobal>1</IsGlobal>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
-      <IsCustomizable>1</IsCustomizable>
-      <ExternalTypeName></ExternalTypeName>
-      <displaynames>
-        <displayname description="Task Issue Type (Delete)" languagecode="1033" />
-      </displaynames>
-      <Descriptions>
-        <Description description="" languagecode="1033" />
-      </Descriptions>
-      <options>
-        <option value="119020000" ExternalValue="" Color="">
-          <labels>
-            <label description="None" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-        <option value="119020001" ExternalValue="" Color="">
-          <labels>
-            <label description="Accommodation Issue" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-        <option value="119020002" ExternalValue="" Color="">
-          <labels>
-            <label description="Financial Issue" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-        <option value="119020003" ExternalValue="" Color="">
-          <labels>
-            <label description="Medical Issue" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-        <option value="119020004" ExternalValue="" Color="">
-          <labels>
-            <label description="Mental Health &amp; Wellbeing" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-        <option value="119020005" ExternalValue="" Color="">
-          <labels>
-            <label description="Not completed request form" languagecode="1033" />
-          </labels>
-          <Descriptions>
-            <Description description="" languagecode="1033" />
-          </Descriptions>
-        </option>
-      </options>
-    </optionset>
   </optionsets>
   <Dashboards>
     <Dashboard>
