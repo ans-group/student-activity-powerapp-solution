@@ -675,6 +675,7 @@
               <LogicalName>ans_contact</LogicalName>
               <RequiredLevel>required</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
               <ValidForCreateApi>1</ValidForCreateApi>
@@ -1917,6 +1918,8 @@
                 </rows>
               </footer>
               <DisplayConditions Order="2" FallbackForm="true">
+                <Role Id="{D554B045-687E-EA11-A811-000D3A0B9028}" />
+                <Role Id="{91B5C693-3895-EA11-A812-000D3A86B423}" />
                 <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
                 <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
               </DisplayConditions>
@@ -2446,6 +2449,15 @@
       <Name LocalizedName="Contact" OriginalName="">Contact</Name>
       <EntityInfo>
         <entity Name="Contact">
+          <LocalizedNames>
+            <LocalizedName description="Contact" languagecode="1033" />
+          </LocalizedNames>
+          <LocalizedCollectionNames>
+            <LocalizedCollectionName description="Contacts" languagecode="1033" />
+          </LocalizedCollectionNames>
+          <Descriptions>
+            <Description description="Person with whom a business unit has a relationship, such as customer, supplier, and colleague." languagecode="1033" />
+          </Descriptions>
           <attributes>
             <attribute PhysicalName="ans_CallCount">
               <Type>int</Type>
@@ -3908,56 +3920,7 @@
                   </NavBarByRelationshipItem>
                 </NavBar>
               </Navigation>
-              <controlDescriptions>
-                <controlDescription forControl="{3ff9a528-dd50-4aca-8f10-2e5ed73513ad}">
-                  <customControl formFactor="2" name="MscrmControls.CardFeedContainer.CardFeedContainer">
-                    <parameters>
-                      <data-set name="SubGrid">
-                        <ViewId>{92AFD454-0F2E-4397-A1C8-05E37C6AD699}</ViewId>
-                        <IsUserView>false</IsUserView>
-                        <TargetEntityType>actioncard</TargetEntityType>
-                        <FilteredViewIds>{92AFD454-0F2E-4397-A1C8-05E37C6AfD699}</FilteredViewIds>
-                        <EnableViewPicker>false</EnableViewPicker>
-                      </data-set>
-                      <EntityTypeCode static="true" type="Decimal">2</EntityTypeCode>
-                      <Location static="true" type="Decimal">1</Location>
-                      <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
-                    </parameters>
-                  </customControl>
-                  <customControl formFactor="0" name="MscrmControls.CardFeedContainer.CardFeedContainer">
-                    <parameters>
-                      <data-set name="SubGrid">
-                        <ViewId>{92AFD454-0F2E-4397-A1C8-05E37C6AD699}</ViewId>
-                        <IsUserView>false</IsUserView>
-                        <TargetEntityType>actioncard</TargetEntityType>
-                        <FilteredViewIds>{92AFD454-0F2E-4397-A1C8-05E37C6AfD699}</FilteredViewIds>
-                        <EnableViewPicker>false</EnableViewPicker>
-                      </data-set>
-                      <EntityTypeCode static="true" type="Decimal">2</EntityTypeCode>
-                      <Location static="true" type="Decimal">1</Location>
-                      <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
-                    </parameters>
-                  </customControl>
-                  <customControl formFactor="1" name="MscrmControls.CardFeedContainer.CardFeedContainer">
-                    <parameters>
-                      <data-set name="SubGrid">
-                        <ViewId>{92AFD454-0F2E-4397-A1C8-05E37C6AD699}</ViewId>
-                        <IsUserView>false</IsUserView>
-                        <TargetEntityType>actioncard</TargetEntityType>
-                        <FilteredViewIds>{92AFD454-0F2E-4397-A1C8-05E37C6AfD699}</FilteredViewIds>
-                        <EnableViewPicker>false</EnableViewPicker>
-                      </data-set>
-                      <EntityTypeCode static="true" type="Decimal">2</EntityTypeCode>
-                      <Location static="true" type="Decimal">1</Location>
-                      <msinternal.isvisibleinmocaonly static="true">true</msinternal.isvisibleinmocaonly>
-                    </parameters>
-                  </customControl>
-                </controlDescription>
-              </controlDescriptions>
-              <DisplayConditions FallbackForm="true" Order="6">
-                <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
-                <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
-              </DisplayConditions>
+              <controlDescriptions />
               <footer id="{c6438ac8-b9ac-4277-b21d-926a017e5c4c}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
                 <rows>
                   <row>
@@ -3979,6 +3942,11 @@
                   </row>
                 </rows>
               </footer>
+              <DisplayConditions FallbackForm="true" Order="6">
+                <Role Id="{D554B045-687E-EA11-A811-000D3A0B9028}" />
+                <Role Id="{91B5C693-3895-EA11-A812-000D3A86B423}" />
+                <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -4463,7 +4431,7 @@
                                 </labels>
                                 <control id="creditonhold" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="creditonhold" />
                               </cell>
-                              <cell id="{24170feb-6b46-4677-8da1-f65af31f0bab}">
+                              <cell id="{38b4599c-8fa9-48d6-8e76-c6f3f7e23f13}">
                                 <labels>
                                   <label description="" languagecode="1033" />
                                 </labels>
@@ -9969,24 +9937,23 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="contact">
-        <attribute name="contactid" />
-        
-        
-        <attribute name="emailaddress1" />
-        <attribute name="ans_callcount" />
-        <attribute name="ans_lastactivitydate" />
-        <attribute name="ans_meetingcount" />
-        <attribute name="ans_privatechatmessagecount" />
-        <attribute name="ans_teamchatmessagecount" />
-        
-        
-        
-        <filter type="and">
-            <condition attribute="ans_lastactivitydate" operator="not-null" />
-        </filter>
-    <attribute name="fullname" /><order attribute="fullname" descending="false" /><order attribute="ans_lastactivitydate" descending="false" /><attribute name="ans_lowengagement" /></entity>
-</fetch>
+                <entity name="contact">
+                  <attribute name="contactid" />
+                  <attribute name="emailaddress1" />
+                  <attribute name="ans_callcount" />
+                  <attribute name="ans_lastactivitydate" />
+                  <attribute name="ans_meetingcount" />
+                  <attribute name="ans_privatechatmessagecount" />
+                  <attribute name="ans_teamchatmessagecount" />
+                  <filter type="and">
+                    <condition attribute="ans_lastactivitydate" operator="not-null" />
+                  </filter>
+                  <attribute name="fullname" />
+                  <order attribute="fullname" descending="false" />
+                  <order attribute="ans_lastactivitydate" descending="false" />
+                  <attribute name="ans_lowengagement" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10016,24 +9983,24 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="contact">
-        <attribute name="contactid" />
-        
-        
-        <attribute name="emailaddress1" />
-        <attribute name="ans_callcount" />
-        <attribute name="ans_lastactivitydate" />
-        <attribute name="ans_meetingcount" />
-        <attribute name="ans_privatechatmessagecount" />
-        <attribute name="ans_teamchatmessagecount" />
-        
-        
-        <filter type="and">
-            <condition attribute="ans_lowengagement" operator="eq" value="119020001" />
-            <condition attribute="ans_lastactivitydate" operator="not-null" />
-        </filter>
-    <attribute name="fullname" /><order attribute="ans_lastactivitydate" descending="true" /><order attribute="ans_privatechatmessagecount" descending="true" /><order attribute="fullname" descending="false" /></entity>
-</fetch>
+                <entity name="contact">
+                  <attribute name="contactid" />
+                  <attribute name="emailaddress1" />
+                  <attribute name="ans_callcount" />
+                  <attribute name="ans_lastactivitydate" />
+                  <attribute name="ans_meetingcount" />
+                  <attribute name="ans_privatechatmessagecount" />
+                  <attribute name="ans_teamchatmessagecount" />
+                  <filter type="and">
+                    <condition attribute="ans_lowengagement" operator="eq" value="119020001" />
+                    <condition attribute="ans_lastactivitydate" operator="not-null" />
+                  </filter>
+                  <attribute name="fullname" />
+                  <order attribute="ans_lastactivitydate" descending="true" />
+                  <order attribute="ans_privatechatmessagecount" descending="true" />
+                  <order attribute="fullname" descending="false" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10063,27 +10030,24 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="contact">
-        <attribute name="fullname" />
-        <attribute name="contactid" />
-        
-        
-        <attribute name="emailaddress1" />
-        <attribute name="ans_callcount" />
-        <attribute name="ans_lastactivitydate" />
-        <attribute name="ans_meetingcount" />
-        <attribute name="ans_privatechatmessagecount" />
-        <attribute name="ans_teamchatmessagecount" />
-        
-        
-        
-        
-        <filter type="and">
-            <condition attribute="ans_lowengagement" operator="eq" value="119020000" />
-            <condition attribute="ans_lastactivitydate" operator="not-null" />
-        </filter>
-    <order attribute="ans_lastactivitydate" descending="false" /><order attribute="ans_privatechatmessagecount" descending="false" /><order attribute="fullname" descending="false" /></entity>
-</fetch>
+                <entity name="contact">
+                  <attribute name="fullname" />
+                  <attribute name="contactid" />
+                  <attribute name="emailaddress1" />
+                  <attribute name="ans_callcount" />
+                  <attribute name="ans_lastactivitydate" />
+                  <attribute name="ans_meetingcount" />
+                  <attribute name="ans_privatechatmessagecount" />
+                  <attribute name="ans_teamchatmessagecount" />
+                  <filter type="and">
+                    <condition attribute="ans_lowengagement" operator="eq" value="119020000" />
+                    <condition attribute="ans_lastactivitydate" operator="not-null" />
+                  </filter>
+                  <order attribute="ans_lastactivitydate" descending="false" />
+                  <order attribute="ans_privatechatmessagecount" descending="false" />
+                  <order attribute="fullname" descending="false" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10386,9 +10350,39 @@
       </RibbonDiffXml>
     </Entity>
     <Entity>
+      <Name LocalizedName="Dataflow" OriginalName="Dataflow">msdyn_dataflow</Name>
+      <EntityInfo>
+        <entity Name="msdyn_dataflow" unmodified="1">
+          <attributes />
+        </entity>
+      </EntityInfo>
+      <RibbonDiffXml>
+        <CustomActions />
+        <Templates>
+          <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+        </Templates>
+        <CommandDefinitions />
+        <RuleDefinitions>
+          <TabDisplayRules />
+          <DisplayRules />
+          <EnableRules />
+        </RuleDefinitions>
+        <LocLabels />
+      </RibbonDiffXml>
+    </Entity>
+    <Entity>
       <Name LocalizedName="Task" OriginalName="">Task</Name>
       <EntityInfo>
         <entity Name="Task">
+          <LocalizedNames>
+            <LocalizedName description="Task" languagecode="1033" />
+          </LocalizedNames>
+          <LocalizedCollectionNames>
+            <LocalizedCollectionName description="Tasks" languagecode="1033" />
+          </LocalizedCollectionNames>
+          <Descriptions>
+            <Description description="Generic activity representing work needed to be done." languagecode="1033" />
+          </Descriptions>
           <attributes>
             <attribute PhysicalName="ans_issue_type">
               <Type>picklist</Type>
@@ -10649,10 +10643,6 @@
                   </row>
                 </rows>
               </header>
-              <DisplayConditions FallbackForm="true" Order="4">
-                <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
-                <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
-              </DisplayConditions>
               <events>
                 <event name="onload" application="true" active="true">
                   <InternalHandlers>
@@ -10688,6 +10678,12 @@
                   </row>
                 </rows>
               </footer>
+              <DisplayConditions FallbackForm="true" Order="4">
+                <Role Id="{D554B045-687E-EA11-A811-000D3A0B9028}" />
+                <Role Id="{91B5C693-3895-EA11-A812-000D3A86B423}" />
+                <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+                <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+              </DisplayConditions>
             </form>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -10723,20 +10719,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="eq" value="119020001" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="eq" value="119020001" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10764,20 +10760,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="ne" value="119020000" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="ne" value="119020000" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10805,20 +10801,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="eq" value="119020002" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="eq" value="119020002" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10846,20 +10842,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="eq" value="119020003" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="eq" value="119020003" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10887,20 +10883,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="eq" value="119020004" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="eq" value="119020004" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -10928,20 +10924,20 @@
             <querytype>0</querytype>
             <fetchxml>
               <fetch version="1.0" output-format="xml-platform" mapping="logical">
-    <entity name="task">
-        <attribute name="activityid" />
-        
-        <attribute name="description" />
-        <filter type="and">
-            <condition attribute="ans_issue_type" operator="eq" value="119020005" />
-        </filter>
-        <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
-            <attribute name="emailaddress1" />
-            <attribute name="mobilephone" />
-            <attribute name="fullname" />
-        </link-entity>
-    <attribute name="ans_issue_type" /></entity>
-</fetch>
+                <entity name="task">
+                  <attribute name="activityid" />
+                  <attribute name="description" />
+                  <filter type="and">
+                    <condition attribute="ans_issue_type" operator="eq" value="119020005" />
+                  </filter>
+                  <link-entity alias="a_adfd02bb146245a181af98bd3feacd03" name="contact" to="regardingobjectid" from="contactid" link-type="outer" visible="false">
+                    <attribute name="emailaddress1" />
+                    <attribute name="mobilephone" />
+                    <attribute name="fullname" />
+                  </link-entity>
+                  <attribute name="ans_issue_type" />
+                </entity>
+              </fetch>
             </fetchxml>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <LocalizedNames>
@@ -11021,34 +11017,16 @@
     </Entity>
   </Entities>
   <Roles>
-    <Role id="{d554b045-687e-ea11-a811-000d3a0b9028}" name="HE Student Manager" isinherited="0">
+    <Role id="{d554b045-687e-ea11-a811-000d3a0b9028}" name="ANS StudentActivity App Access" isinherited="0">
       <IsCustomizable>1</IsCustomizable>
       <RolePrivileges>
-        <RolePrivilege name="prvAppendActionCard" level="Global" />
-        <RolePrivilege name="prvAppendActivity" level="Global" />
         <RolePrivilege name="prvAppendans_Request" level="Global" />
-        <RolePrivilege name="prvAppendContact" level="Global" />
-        <RolePrivilege name="prvAppendToActionCard" level="Global" />
-        <RolePrivilege name="prvAppendToActivity" level="Global" />
         <RolePrivilege name="prvAppendToans_Request" level="Global" />
-        <RolePrivilege name="prvAppendToContact" level="Global" />
-        <RolePrivilege name="prvAssignActionCard" level="Global" />
-        <RolePrivilege name="prvAssignActivity" level="Global" />
         <RolePrivilege name="prvAssignans_Request" level="Global" />
-        <RolePrivilege name="prvAssignContact" level="Global" />
-        <RolePrivilege name="prvCreateActionCard" level="Global" />
-        <RolePrivilege name="prvCreateActivity" level="Global" />
         <RolePrivilege name="prvCreateans_Request" level="Global" />
-        <RolePrivilege name="prvCreateContact" level="Global" />
         <RolePrivilege name="prvCreateSharePointData" level="Global" />
-        <RolePrivilege name="prvDeleteActionCard" level="Global" />
-        <RolePrivilege name="prvDeleteActivity" level="Global" />
         <RolePrivilege name="prvDeleteans_Request" level="Global" />
-        <RolePrivilege name="prvDeleteContact" level="Global" />
-        <RolePrivilege name="prvReadActionCard" level="Global" />
-        <RolePrivilege name="prvReadActivity" level="Global" />
         <RolePrivilege name="prvReadans_Request" level="Global" />
-        <RolePrivilege name="prvReadContact" level="Global" />
         <RolePrivilege name="prvReadPluginAssembly" level="Global" />
         <RolePrivilege name="prvReadPluginType" level="Global" />
         <RolePrivilege name="prvReadSdkMessage" level="Global" />
@@ -11056,14 +11034,318 @@
         <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
         <RolePrivilege name="prvReadSharePointData" level="Global" />
         <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+        <RolePrivilege name="prvShareans_Request" level="Global" />
+        <RolePrivilege name="prvWriteans_Request" level="Global" />
+        <RolePrivilege name="prvWriteSharePointData" level="Global" />
+      </RolePrivileges>
+    </Role>
+    <Role id="{91b5c693-3895-ea11-a812-000d3a86b423}" name="ANS StudentActivity Common Data Service" isinherited="0">
+      <IsCustomizable>1</IsCustomizable>
+      <RolePrivileges>
+        <RolePrivilege name="prvActivateSynchronousWorkflow" level="Basic" />
+        <RolePrivilege name="prvAddressBook" level="Global" />
+        <RolePrivilege name="prvAppendAccount" level="Basic" />
+        <RolePrivilege name="prvAppendActionCard" level="Basic" />
+        <RolePrivilege name="prvAppendActivity" level="Global" />
+        <RolePrivilege name="prvAppendans_Request" level="Global" />
+        <RolePrivilege name="prvAppendChannelPropertyGroup" level="Global" />
+        <RolePrivilege name="prvAppendConnection" level="Global" />
+        <RolePrivilege name="prvAppendContact" level="Global" />
+        <RolePrivilege name="prvAppendCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvAppendEmailTemplate" level="Local" />
+        <RolePrivilege name="prvAppendExpiredProcess" level="Global" />
+        <RolePrivilege name="prvAppendFeedback" level="Basic" />
+        <RolePrivilege name="prvAppendImport" level="Basic" />
+        <RolePrivilege name="prvAppendImportFile" level="Basic" />
+        <RolePrivilege name="prvAppendImportMap" level="Local" />
+        <RolePrivilege name="prvAppendLanguageLocale" level="Global" />
+        <RolePrivilege name="prvAppendMailbox" level="Basic" />
+        <RolePrivilege name="prvAppendMailboxTrackingFolder" level="Basic" />
+        <RolePrivilege name="prvAppendMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvAppendNewProcess" level="Global" />
+        <RolePrivilege name="prvAppendNote" level="Basic" />
+        <RolePrivilege name="prvAppendPersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvAppendPost" level="Global" />
+        <RolePrivilege name="prvAppendPostFollow" level="Basic" />
+        <RolePrivilege name="prvAppendReport" level="Basic" />
+        <RolePrivilege name="prvAppendSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvAppendSyncError" level="Basic" />
+        <RolePrivilege name="prvAppendToAccount" level="Basic" />
+        <RolePrivilege name="prvAppendToActionCard" level="Global" />
+        <RolePrivilege name="prvAppendToActivity" level="Global" />
+        <RolePrivilege name="prvAppendToans_Request" level="Global" />
+        <RolePrivilege name="prvAppendToAsyncOperation" level="Basic" />
+        <RolePrivilege name="prvAppendToChannelPropertyGroup" level="Global" />
+        <RolePrivilege name="prvAppendToConnection" level="Global" />
+        <RolePrivilege name="prvAppendToContact" level="Global" />
+        <RolePrivilege name="prvAppendToCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvAppendToEmailServerProfile" level="Global" />
+        <RolePrivilege name="prvAppendToExpanderEvent" level="Global" />
+        <RolePrivilege name="prvAppendToExpiredProcess" level="Global" />
+        <RolePrivilege name="prvAppendToFeedback" level="Basic" />
+        <RolePrivilege name="prvAppendToImport" level="Basic" />
+        <RolePrivilege name="prvAppendToImportFile" level="Basic" />
+        <RolePrivilege name="prvAppendToImportMap" level="Local" />
+        <RolePrivilege name="prvAppendToLanguageLocale" level="Global" />
+        <RolePrivilege name="prvAppendToMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvAppendToNewProcess" level="Global" />
+        <RolePrivilege name="prvAppendToNote" level="Basic" />
+        <RolePrivilege name="prvAppendToPersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvAppendToPost" level="Global" />
+        <RolePrivilege name="prvAppendToQueue" level="Basic" />
+        <RolePrivilege name="prvAppendToReport" level="Basic" />
+        <RolePrivilege name="prvAppendToSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvAppendToSharePointSite" level="Global" />
+        <RolePrivilege name="prvAppendToSyncError" level="Basic" />
+        <RolePrivilege name="prvAppendToTraceLog" level="Global" />
+        <RolePrivilege name="prvAppendToTransactionCurrency" level="Global" />
+        <RolePrivilege name="prvAppendToTranslationProcess" level="Global" />
+        <RolePrivilege name="prvAppendToUser" level="Local" />
+        <RolePrivilege name="prvAppendToUserSettings" level="Local" />
+        <RolePrivilege name="prvAppendToWorkflow" level="Global" />
+        <RolePrivilege name="prvAppendToWorkflowSession" level="Basic" />
+        <RolePrivilege name="prvAppendTraceLog" level="Global" />
+        <RolePrivilege name="prvAppendTransactionCurrency" level="Global" />
+        <RolePrivilege name="prvAppendTranslationProcess" level="Global" />
+        <RolePrivilege name="prvAppendUser" level="Local" />
+        <RolePrivilege name="prvAppendWorkflow" level="Basic" />
+        <RolePrivilege name="prvAppendWorkflowSession" level="Basic" />
+        <RolePrivilege name="prvAssignAccount" level="Basic" />
+        <RolePrivilege name="prvAssignActivity" level="Global" />
+        <RolePrivilege name="prvAssignans_Request" level="Global" />
+        <RolePrivilege name="prvAssignAsyncOperation" level="Basic" />
+        <RolePrivilege name="prvAssignCallbackRegistration" level="Basic" />
+        <RolePrivilege name="prvAssignConnection" level="Basic" />
+        <RolePrivilege name="prvAssignContact" level="Global" />
+        <RolePrivilege name="prvAssignCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvAssignEmailSignature" level="Local" />
+        <RolePrivilege name="prvAssignEmailTemplate" level="Local" />
+        <RolePrivilege name="prvAssignImport" level="Basic" />
+        <RolePrivilege name="prvAssignImportFile" level="Basic" />
+        <RolePrivilege name="prvAssignImportMap" level="Local" />
+        <RolePrivilege name="prvAssignMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvAssignNote" level="Basic" />
+        <RolePrivilege name="prvAssignPersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvAssignReport" level="Basic" />
+        <RolePrivilege name="prvAssignSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvAssignSharePointSite" level="Global" />
+        <RolePrivilege name="prvAssignSyncError" level="Basic" />
+        <RolePrivilege name="prvAssignUserEntityInstanceData" level="Basic" />
+        <RolePrivilege name="prvAssignUserForm" level="Basic" />
+        <RolePrivilege name="prvAssignUserQuery" level="Basic" />
+        <RolePrivilege name="prvAssignUserQueryVisualizations" level="Basic" />
+        <RolePrivilege name="prvAssignWorkflow" level="Basic" />
+        <RolePrivilege name="prvAssignWorkflowSession" level="Basic" />
+        <RolePrivilege name="prvBulkEdit" level="Global" />
+        <RolePrivilege name="prvCreateAccount" level="Basic" />
+        <RolePrivilege name="prvCreateActionCard" level="Basic" />
+        <RolePrivilege name="prvCreateActionCardUserSettings" level="Basic" />
+        <RolePrivilege name="prvCreateActivity" level="Global" />
+        <RolePrivilege name="prvCreateans_Request" level="Global" />
+        <RolePrivilege name="prvCreateCallbackRegistration" level="Basic" />
+        <RolePrivilege name="prvCreateConnection" level="Basic" />
+        <RolePrivilege name="prvCreateContact" level="Global" />
+        <RolePrivilege name="prvCreateCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvCreateEmailSignature" level="Basic" />
+        <RolePrivilege name="prvCreateEmailTemplate" level="Basic" />
+        <RolePrivilege name="prvCreateExpiredProcess" level="Global" />
+        <RolePrivilege name="prvCreateImport" level="Basic" />
+        <RolePrivilege name="prvCreateImportFile" level="Basic" />
+        <RolePrivilege name="prvCreateImportMap" level="Local" />
+        <RolePrivilege name="prvCreateMailboxTrackingFolder" level="Basic" />
+        <RolePrivilege name="prvCreateMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvCreateNewProcess" level="Global" />
+        <RolePrivilege name="prvCreateNote" level="Basic" />
+        <RolePrivilege name="prvCreatePersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvCreatePost" level="Global" />
+        <RolePrivilege name="prvCreatePostFollow" level="Basic" />
+        <RolePrivilege name="prvCreateReport" level="Basic" />
+        <RolePrivilege name="prvCreateSharePointData" level="Global" />
+        <RolePrivilege name="prvCreateSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvCreateSyncError" level="Basic" />
+        <RolePrivilege name="prvCreateTraceLog" level="Global" />
+        <RolePrivilege name="prvCreateTranslationProcess" level="Global" />
+        <RolePrivilege name="prvCreateUserApplicationMetadata" level="Basic" />
+        <RolePrivilege name="prvCreateUserEntityInstanceData" level="Basic" />
+        <RolePrivilege name="prvCreateUserEntityUISettings" level="Basic" />
+        <RolePrivilege name="prvCreateUserForm" level="Basic" />
+        <RolePrivilege name="prvCreateUserQuery" level="Basic" />
+        <RolePrivilege name="prvCreateUserQueryVisualizations" level="Basic" />
+        <RolePrivilege name="prvCreateUserSettings" level="Local" />
+        <RolePrivilege name="prvCreateWorkflow" level="Basic" />
+        <RolePrivilege name="prvCreateWorkflowSession" level="Basic" />
+        <RolePrivilege name="prvDocumentGeneration" level="Global" />
+        <RolePrivilege name="prvFlow" level="Global" />
+        <RolePrivilege name="prvMailMerge" level="Global" />
+        <RolePrivilege name="prvMerge" level="Global" />
+        <RolePrivilege name="prvReadAccount" level="Basic" />
+        <RolePrivilege name="prvReadACIViewMapper" level="Global" />
+        <RolePrivilege name="prvReadActionCard" level="Basic" />
+        <RolePrivilege name="prvReadActionCardUserSettings" level="Basic" />
+        <RolePrivilege name="prvReadActivity" level="Global" />
+        <RolePrivilege name="prvReadans_Request" level="Global" />
+        <RolePrivilege name="prvReadAppConfigMaster" level="Global" />
+        <RolePrivilege name="prvReadApplicationFile" level="Global" />
+        <RolePrivilege name="prvReadAppModule" level="Global" />
+        <RolePrivilege name="prvReadAsyncOperation" level="Basic" />
+        <RolePrivilege name="prvReadAttribute" level="Global" />
+        <RolePrivilege name="prvReadAttributeMap" level="Global" />
+        <RolePrivilege name="prvReadBusinessUnit" level="Global" />
+        <RolePrivilege name="prvReadCallbackRegistration" level="Basic" />
+        <RolePrivilege name="prvReadChannelPropertyGroup" level="Global" />
+        <RolePrivilege name="prvReadComplexControl" level="Global" />
+        <RolePrivilege name="prvReadConnection" level="Global" />
+        <RolePrivilege name="prvReadConnectionRole" level="Global" />
+        <RolePrivilege name="prvReadconnector" level="Global" />
+        <RolePrivilege name="prvReadContact" level="Global" />
+        <RolePrivilege name="prvReadCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvReadCustomization" level="Global" />
+        <RolePrivilege name="prvReadDelveActionHub" level="Global" />
+        <RolePrivilege name="prvReadDocumentTemplate" level="Global" />
+        <RolePrivilege name="prvReadDuplicateRule" level="Global" />
+        <RolePrivilege name="prvReadEmailServerProfile" level="Global" />
+        <RolePrivilege name="prvReadEmailSignature" level="Global" />
+        <RolePrivilege name="prvReadEmailTemplate" level="Global" />
+        <RolePrivilege name="prvReadEntity" level="Global" />
+        <RolePrivilege name="prvReadEntityDataProvider" level="Global" />
+        <RolePrivilege name="prvReadEntityKey" level="Global" />
+        <RolePrivilege name="prvReadEntityMap" level="Global" />
+        <RolePrivilege name="prvReadEnvironmentVariableDefinition" level="Global" />
+        <RolePrivilege name="prvReadEnvironmentVariableValue" level="Global" />
+        <RolePrivilege name="prvReadExpanderEvent" level="Global" />
+        <RolePrivilege name="prvReadExpiredProcess" level="Global" />
+        <RolePrivilege name="prvReadFeedback" level="Basic" />
+        <RolePrivilege name="prvReadflowsession" level="Basic" />
+        <RolePrivilege name="prvReadGoalRollupQuery" level="Basic" />
+        <RolePrivilege name="prvReadHierarchyRule" level="Global" />
+        <RolePrivilege name="prvReadImport" level="Basic" />
+        <RolePrivilege name="prvReadImportFile" level="Basic" />
+        <RolePrivilege name="prvReadImportMap" level="Global" />
+        <RolePrivilege name="prvReadInteractionForEmail" level="Global" />
+        <RolePrivilege name="prvReadLanguageLocale" level="Global" />
+        <RolePrivilege name="prvReadLicense" level="Global" />
+        <RolePrivilege name="prvReadMailbox" level="Basic" />
+        <RolePrivilege name="prvReadMailboxTrackingFolder" level="Basic" />
+        <RolePrivilege name="prvReadMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvReadMobileOfflineProfile" level="Global" />
+        <RolePrivilege name="prvReadmsdyn_AIModel" level="Basic" />
+        <RolePrivilege name="prvReadmsdyn_AIOdLabel" level="Global" />
+        <RolePrivilege name="prvReadmsdyn_AITemplate" level="Global" />
+        <RolePrivilege name="prvReadNewProcess" level="Global" />
+        <RolePrivilege name="prvReadNewsArticle" level="Global" />
+        <RolePrivilege name="prvReadNote" level="Basic" />
+        <RolePrivilege name="prvReadOptionSet" level="Global" />
+        <RolePrivilege name="prvReadOrganization" level="Global" />
+        <RolePrivilege name="prvReadPersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+        <RolePrivilege name="prvReadPluginType" level="Global" />
+        <RolePrivilege name="prvReadPosition" level="Global" />
+        <RolePrivilege name="prvReadPost" level="Global" />
+        <RolePrivilege name="prvReadPostFollow" level="Global" />
+        <RolePrivilege name="prvReadQuery" level="Global" />
+        <RolePrivilege name="prvReadQueue" level="Basic" />
+        <RolePrivilege name="prvReadRecommendedDocument" level="Global" />
+        <RolePrivilege name="prvReadRelationship" level="Global" />
+        <RolePrivilege name="prvReadRelationshipRole" level="Global" />
+        <RolePrivilege name="prvReadReport" level="Basic" />
+        <RolePrivilege name="prvReadRole" level="Local" />
+        <RolePrivilege name="prvReadSavedQueryVisualizations" level="Global" />
+        <RolePrivilege name="prvReadSdkMessage" level="Global" />
+        <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+        <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+        <RolePrivilege name="prvReadSharePointData" level="Global" />
+        <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+        <RolePrivilege name="prvReadSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvReadSharePointSite" level="Global" />
+        <RolePrivilege name="prvReadSuggestionCardTemplate" level="Global" />
+        <RolePrivilege name="prvReadSyncError" level="Basic" />
+        <RolePrivilege name="prvReadSystemApplicationMetadata" level="Global" />
+        <RolePrivilege name="prvReadSystemForm" level="Global" />
+        <RolePrivilege name="prvReadTeam" level="Global" />
+        <RolePrivilege name="prvReadTraceLog" level="Global" />
+        <RolePrivilege name="prvReadTransactionCurrency" level="Global" />
+        <RolePrivilege name="prvReadTranslationProcess" level="Global" />
+        <RolePrivilege name="prvReadUser" level="Global" />
+        <RolePrivilege name="prvReadUserApplicationMetadata" level="Basic" />
+        <RolePrivilege name="prvReadUserEntityInstanceData" level="Basic" />
+        <RolePrivilege name="prvReadUserEntityUISettings" level="Basic" />
+        <RolePrivilege name="prvReadUserForm" level="Basic" />
+        <RolePrivilege name="prvReadUserQuery" level="Basic" />
+        <RolePrivilege name="prvReadUserQueryVisualizations" level="Basic" />
+        <RolePrivilege name="prvReadUserSettings" level="Global" />
+        <RolePrivilege name="prvReadWebResource" level="Global" />
+        <RolePrivilege name="prvReadWebWizard" level="Global" />
+        <RolePrivilege name="prvReadWizardAccessPrivilege" level="Global" />
+        <RolePrivilege name="prvReadWizardPage" level="Global" />
+        <RolePrivilege name="prvReadWorkflow" level="Basic" />
+        <RolePrivilege name="prvReadworkflowbinary" level="Basic" />
+        <RolePrivilege name="prvReadWorkflowSession" level="Global" />
+        <RolePrivilege name="prvShareAccount" level="Global" />
+        <RolePrivilege name="prvShareActionCardUserSettings" level="Basic" />
         <RolePrivilege name="prvShareActivity" level="Global" />
         <RolePrivilege name="prvShareans_Request" level="Global" />
+        <RolePrivilege name="prvShareCallbackRegistration" level="Basic" />
+        <RolePrivilege name="prvShareConnection" level="Global" />
         <RolePrivilege name="prvShareContact" level="Global" />
-        <RolePrivilege name="prvWriteActionCard" level="Global" />
+        <RolePrivilege name="prvShareCustomerRelationship" level="Global" />
+        <RolePrivilege name="prvShareEmailTemplate" level="Local" />
+        <RolePrivilege name="prvShareImport" level="Deep" />
+        <RolePrivilege name="prvShareImportFile" level="Deep" />
+        <RolePrivilege name="prvShareImportMap" level="Global" />
+        <RolePrivilege name="prvShareMailMergeTemplate" level="Global" />
+        <RolePrivilege name="prvShareNote" level="Global" />
+        <RolePrivilege name="prvSharePersonalDocumentTemplate" level="Global" />
+        <RolePrivilege name="prvShareReport" level="Global" />
+        <RolePrivilege name="prvShareSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvShareSharePointSite" level="Global" />
+        <RolePrivilege name="prvShareSyncError" level="Basic" />
+        <RolePrivilege name="prvShareUserEntityInstanceData" level="Basic" />
+        <RolePrivilege name="prvShareUserEntityUISettings" level="Basic" />
+        <RolePrivilege name="prvShareUserForm" level="Basic" />
+        <RolePrivilege name="prvShareUserQuery" level="Basic" />
+        <RolePrivilege name="prvShareUserQueryVisualizations" level="Basic" />
+        <RolePrivilege name="prvShareWorkflow" level="Basic" />
+        <RolePrivilege name="prvShareWorkflowSession" level="Basic" />
+        <RolePrivilege name="prvUseTabletApp" level="Global" />
+        <RolePrivilege name="prvWebMailMerge" level="Global" />
+        <RolePrivilege name="prvWorkflowExecution" level="Global" />
+        <RolePrivilege name="prvWriteAccount" level="Basic" />
+        <RolePrivilege name="prvWriteActionCard" level="Basic" />
+        <RolePrivilege name="prvWriteActionCardUserSettings" level="Basic" />
         <RolePrivilege name="prvWriteActivity" level="Global" />
         <RolePrivilege name="prvWriteans_Request" level="Global" />
+        <RolePrivilege name="prvWriteAsyncOperation" level="Basic" />
+        <RolePrivilege name="prvWriteCallbackRegistration" level="Basic" />
+        <RolePrivilege name="prvWriteConnection" level="Global" />
         <RolePrivilege name="prvWriteContact" level="Global" />
+        <RolePrivilege name="prvWriteCustomerRelationship" level="Basic" />
+        <RolePrivilege name="prvWriteEmailSignature" level="Basic" />
+        <RolePrivilege name="prvWriteEmailTemplate" level="Basic" />
+        <RolePrivilege name="prvWriteExpanderEvent" level="Global" />
+        <RolePrivilege name="prvWriteExpiredProcess" level="Global" />
+        <RolePrivilege name="prvWriteImport" level="Basic" />
+        <RolePrivilege name="prvWriteImportFile" level="Basic" />
+        <RolePrivilege name="prvWriteImportMap" level="Local" />
+        <RolePrivilege name="prvWriteMailbox" level="Basic" />
+        <RolePrivilege name="prvWriteMailboxTrackingFolder" level="Basic" />
+        <RolePrivilege name="prvWriteMailMergeTemplate" level="Basic" />
+        <RolePrivilege name="prvWriteNewProcess" level="Global" />
+        <RolePrivilege name="prvWriteNote" level="Basic" />
+        <RolePrivilege name="prvWritePersonalDocumentTemplate" level="Basic" />
+        <RolePrivilege name="prvWriteReport" level="Basic" />
         <RolePrivilege name="prvWriteSharePointData" level="Global" />
+        <RolePrivilege name="prvWriteSharePointDocumentLocation" level="Global" />
+        <RolePrivilege name="prvWriteSyncError" level="Basic" />
+        <RolePrivilege name="prvWriteTranslationProcess" level="Global" />
+        <RolePrivilege name="prvWriteUserApplicationMetadata" level="Basic" />
+        <RolePrivilege name="prvWriteUserEntityInstanceData" level="Basic" />
+        <RolePrivilege name="prvWriteUserEntityUISettings" level="Basic" />
+        <RolePrivilege name="prvWriteUserForm" level="Basic" />
+        <RolePrivilege name="prvWriteUserQuery" level="Basic" />
+        <RolePrivilege name="prvWriteUserQueryVisualizations" level="Basic" />
+        <RolePrivilege name="prvWriteUserSettings" level="Local" />
+        <RolePrivilege name="prvWriteWorkflow" level="Basic" />
+        <RolePrivilege name="prvWriteWorkflowSession" level="Basic" />
       </RolePrivileges>
     </Role>
   </Roles>
@@ -11086,7 +11368,6 @@
       <IsTransacted>1</IsTransacted>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
-      <BusinessProcessType>0</BusinessProcessType>
       <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
       <PrimaryEntity>none</PrimaryEntity>
       <LocalizedNames>
@@ -11114,7 +11395,6 @@
       <IsTransacted>1</IsTransacted>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
-      <BusinessProcessType>0</BusinessProcessType>
       <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
       <PrimaryEntity>none</PrimaryEntity>
       <LocalizedNames>
@@ -11142,7 +11422,6 @@
       <IsTransacted>1</IsTransacted>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
-      <BusinessProcessType>0</BusinessProcessType>
       <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
       <PrimaryEntity>none</PrimaryEntity>
       <LocalizedNames>
@@ -11170,7 +11449,6 @@
       <IsTransacted>1</IsTransacted>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
-      <BusinessProcessType>0</BusinessProcessType>
       <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
       <PrimaryEntity>none</PrimaryEntity>
       <LocalizedNames>
@@ -11221,13 +11499,12 @@
       <TriggerOnDelete>0</TriggerOnDelete>
       <AsyncAutodelete>0</AsyncAutodelete>
       <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
-      <StateCode>1</StateCode>
-      <StatusCode>2</StatusCode>
+      <StateCode>0</StateCode>
+      <StatusCode>1</StatusCode>
       <RunAs>1</RunAs>
       <IsTransacted>1</IsTransacted>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
-      <BusinessProcessType>0</BusinessProcessType>
       <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
       <PrimaryEntity>none</PrimaryEntity>
       <LocalizedNames>
@@ -12839,9 +13116,9 @@
         <AppModuleComponent type="59" id="{8eb29487-6d7d-ea11-a811-000d3a0b9028}" />
       </AppModuleComponents>
       <AppModuleRoleMaps>
+        <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
         <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
         <Role id="{d554b045-687e-ea11-a811-000d3a0b9028}" />
-        <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
       </AppModuleRoleMaps>
       <LocalizedNames>
         <LocalizedName description="Student Manager" languagecode="1033" />
@@ -12849,6 +13126,60 @@
     </AppModule>
   </AppModules>
   <EntityDataProviders />
+  <msdyn_dataflows>
+    <msdyn_dataflow msdyn_dataflowid="030566d1-1095-ea11-a812-002248006440">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_internalversion>eb138bde-aaa5-49a7-8b18-21c20e13b78d</msdyn_internalversion>
+      <msdyn_mashupdocument>section Section1;
+shared TeamsActivityData = let
+  Source = AzureStorage.DataLake(AzureDataLakeGen2),
+  Navigation = Source{[#"Folder Path" =  Text.Combine({AzureDataLakeGen2, "teams-json/"}) , Name = "teams_activity_data.json"]}[Content],
+  #"Imported JSON" = Json.Document(Navigation),
+  Students = #"Imported JSON"[value],
+  #"Converted to Table" = Table.FromList(Students, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+  #"Expanded Column1 1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"displayName", "givenName", "surname", "mail", "usageLocation", "id", "userPrincipalName", "reportRefreshDate", "lastActivityDate", "isDeleted", "teamChatMessageCount", "privateChatMessageCount", "callCount", "meetingCount"}, {"Column1.displayName", "Column1.givenName", "Column1.surname", "Column1.mail", "Column1.usageLocation", "Column1.id", "Column1.userPrincipalName", "Column1.reportRefreshDate", "Column1.lastActivityDate", "Column1.isDeleted", "Column1.teamChatMessageCount", "Column1.privateChatMessageCount", "Column1.callCount", "Column1.meetingCount"}),
+  #"Filtered rows" = Table.SelectRows(#"Expanded Column1 1", each [Column1.displayName] &lt;&gt; null and [Column1.givenName] &lt;&gt; null and [Column1.surname] &lt;&gt; null and [Column1.mail] &lt;&gt; null and [Column1.isDeleted] = false)
+in
+  #"Filtered rows";
+shared AzureDataLakeGen2 = let
+  AzureDataLakeGen2 = "https://biknbz4ifhkrqlakesa.dfs.core.windows.net/" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text]
+in
+  AzureDataLakeGen2;
+</msdyn_mashupdocument>
+      <msdyn_mashupsettings>{"QueryGroups":null,"DocumentLocale":"en-gb","QueriesMetadata":null,"FastCombine":false,"AllowNativeQueries":false,"HostContext":{"Type":"CdsT","Details":{"EnvironmentId":"2df361cf-5fcd-4579-9218-3a1c4d1cb240"}},"HostProperties":null,"SkipAutomaticTypeAndHeaderDetection":false,"DisableAutoAnonymousConnectionUpsert":false,"AllowedModules":null}</msdyn_mashupsettings>
+      <msdyn_name>Import Teams Data DataLake Gen2</msdyn_name>
+      <msdyn_originaldataflowid>2537b6ca-a459-4620-85ed-62775cbb2e9e</msdyn_originaldataflowid>
+      <msdyn_refreshsettings>{"RefreshPeriod":{"Years":0,"Months":0,"Weeks":0,"Days":1,"Hours":0,"Minutes":0,"Seconds":0},"StartDateTime":"2020-05-14T08:00:00+00:00"}</msdyn_refreshsettings>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_dataflow>
+    <msdyn_dataflow msdyn_dataflowid="d82c4110-0d95-ea11-a812-002248006440">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_internalversion>733bf454-2be8-4a18-9e39-003e4569cbee</msdyn_internalversion>
+      <msdyn_mashupdocument>section Section1;
+shared StudentData = let
+  Source = AzureStorage.DataLake(AzureDataLakeGen2),
+  Navigation = Source{[#"Folder Path" = Text.Combine({AzureDataLakeGen2, "user-json/"}), Name = "user_data.json"]}[Content],
+  #"Imported JSON" = Json.Document(Navigation),
+  Students = #"Imported JSON"[value],
+  #"Converted to Table" = Table.FromList(Students, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+  #"Expanded Column1 1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"displayName", "givenName", "surname", "mail", "usageLocation", "id", "userPrincipalName"}, {"Column1.displayName", "Column1.givenName", "Column1.surname", "Column1.mail", "Column1.usageLocation", "Column1.id", "Column1.userPrincipalName"}),
+  #"Filtered rows" = Table.SelectRows(#"Expanded Column1 1", each [Column1.surname] &lt;&gt; null and [Column1.givenName] &lt;&gt; null and [Column1.displayName] &lt;&gt; null and [Column1.mail] &lt;&gt; null)
+in
+  #"Filtered rows";
+shared AzureDataLakeGen2 = let
+  #"AzureDataLake URL" = "https://biknbz4ifhkrqlakesa.dfs.core.windows.net/" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text]
+in
+  #"AzureDataLake URL";
+</msdyn_mashupdocument>
+      <msdyn_mashupsettings>{"QueryGroups":null,"DocumentLocale":"en-gb","QueriesMetadata":null,"FastCombine":false,"AllowNativeQueries":false,"HostContext":{"Type":"CdsT","Details":{"EnvironmentId":"2df361cf-5fcd-4579-9218-3a1c4d1cb240"}},"HostProperties":null,"SkipAutomaticTypeAndHeaderDetection":false,"DisableAutoAnonymousConnectionUpsert":false,"AllowedModules":null}</msdyn_mashupsettings>
+      <msdyn_name>Import Students DataLake Gen2</msdyn_name>
+      <msdyn_originaldataflowid>10830f4a-1663-46ee-8d11-2c8ea67650ac</msdyn_originaldataflowid>
+      <msdyn_refreshsettings>{"RefreshPeriod":{"Years":0,"Months":0,"Weeks":0,"Days":1,"Hours":0,"Minutes":0,"Seconds":0},"StartDateTime":"2020-05-13T00:00:00+00:00"}</msdyn_refreshsettings>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_dataflow>
+  </msdyn_dataflows>
   <Languages>
     <Language>1033</Language>
   </Languages>
