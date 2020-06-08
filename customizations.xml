@@ -12388,7 +12388,7 @@
   <Dashboards>
     <Dashboard>
       <LocalizedNames>
-        <LocalizedName description="Last 7 Days Teams Activity (All Students)" languagecode="1033" />
+        <LocalizedName description="Teams Activity (All Students)" languagecode="1033" />
       </LocalizedNames>
       <FormId>{eaff14f2-667d-ea11-a811-000d3a0b9028}</FormId>
       <IsCustomizable>1</IsCustomizable>
