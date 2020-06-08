@@ -13153,32 +13153,6 @@ in
       <statecode>0</statecode>
       <statuscode>1</statuscode>
     </msdyn_dataflow>
-    <msdyn_dataflow msdyn_dataflowid="d82c4110-0d95-ea11-a812-002248006440">
-      <iscustomizable>1</iscustomizable>
-      <msdyn_internalversion>733bf454-2be8-4a18-9e39-003e4569cbee</msdyn_internalversion>
-      <msdyn_mashupdocument>section Section1;
-shared StudentData = let
-  Source = AzureStorage.DataLake(AzureDataLakeGen2),
-  Navigation = Source{[#"Folder Path" = Text.Combine({AzureDataLakeGen2, "user-json/"}), Name = "user_data.json"]}[Content],
-  #"Imported JSON" = Json.Document(Navigation),
-  Students = #"Imported JSON"[value],
-  #"Converted to Table" = Table.FromList(Students, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-  #"Expanded Column1 1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"displayName", "givenName", "surname", "mail", "usageLocation", "id", "userPrincipalName"}, {"Column1.displayName", "Column1.givenName", "Column1.surname", "Column1.mail", "Column1.usageLocation", "Column1.id", "Column1.userPrincipalName"}),
-  #"Filtered rows" = Table.SelectRows(#"Expanded Column1 1", each [Column1.surname] &lt;&gt; null and [Column1.givenName] &lt;&gt; null and [Column1.displayName] &lt;&gt; null and [Column1.mail] &lt;&gt; null)
-in
-  #"Filtered rows";
-shared AzureDataLakeGen2 = let
-  #"AzureDataLake URL" = "https://biknbz4ifhkrqlakesa.dfs.core.windows.net/" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = type text]
-in
-  #"AzureDataLake URL";
-</msdyn_mashupdocument>
-      <msdyn_mashupsettings>{"QueryGroups":null,"DocumentLocale":"en-gb","QueriesMetadata":null,"FastCombine":false,"AllowNativeQueries":false,"HostContext":{"Type":"CdsT","Details":{"EnvironmentId":"2df361cf-5fcd-4579-9218-3a1c4d1cb240"}},"HostProperties":null,"SkipAutomaticTypeAndHeaderDetection":false,"DisableAutoAnonymousConnectionUpsert":false,"AllowedModules":null}</msdyn_mashupsettings>
-      <msdyn_name>Import Students DataLake Gen2</msdyn_name>
-      <msdyn_originaldataflowid>10830f4a-1663-46ee-8d11-2c8ea67650ac</msdyn_originaldataflowid>
-      <msdyn_refreshsettings>{"RefreshPeriod":{"Years":0,"Months":0,"Weeks":0,"Days":1,"Hours":0,"Minutes":0,"Seconds":0},"StartDateTime":"2020-05-13T00:00:00+00:00"}</msdyn_refreshsettings>
-      <statecode>0</statecode>
-      <statuscode>1</statuscode>
-    </msdyn_dataflow>
   </msdyn_dataflows>
   <Languages>
     <Language>1033</Language>
